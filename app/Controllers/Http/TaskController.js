@@ -25,8 +25,11 @@ class TaskController {
             return response.redirect('back')
         }
         
-        request.input('title')
         // persist to database
+        const task = new Task()
+        task.title = request.input('title')
+
+        await task.save()
 
         return response.redirect('back')
     }

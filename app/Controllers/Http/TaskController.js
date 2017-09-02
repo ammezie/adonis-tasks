@@ -28,14 +28,20 @@ class TaskController {
         // persist to database
         const task = new Task()
         task.title = request.input('title')
-
         await task.save()
+
+        // Fash success message to session
+        session.flash({ notification: 'Task added!' })
 
         return response.redirect('back')
     }
 
-    async destroy () {
-        return 'back'
+    async destroy ({ request, response, session }) {
+
+        // Fash success message to session
+        session.flash({ notification: 'Task deleted!' })
+        
+        return response.redirect('back')
     }
 }
 

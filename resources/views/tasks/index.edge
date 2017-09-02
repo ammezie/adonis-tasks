@@ -21,6 +21,12 @@
             {{ elIf('<p class="help is-danger">$self</p>', getErrorFor('title'), hasErrorFor('title')) }}
         </form>
     </div>
+    
+    @if(old('notification'))
+        <div class="notification is-success">
+            {{ old('notification') }}
+        </div>
+    @endif
 
     <div class="box">
         <h1 class="title">Task List</h1>

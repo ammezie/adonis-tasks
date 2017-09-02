@@ -19,8 +19,8 @@ class TaskController {
 
         // show error messages upon validation fail
         if (validation.fails()) {
-            session.withErrors(validation.messsages())
-                    .flash()
+            session.withErrors(validation.messages())
+                    .flashAll()
 
             return response.redirect('back')
         }

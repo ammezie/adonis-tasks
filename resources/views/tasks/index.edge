@@ -9,7 +9,7 @@
 
             <div class="field has-addons">
                 <div class="control is-expanded">
-                    <input class="input" type="text" name="title" placeholder="Task title">
+                    <input class="input" type="text" name="title" value="{{ old('title', '') }}" placeholder="Task title">
                 </div>
                 <div class="control">
                     <button type="submit" class="button is-primary">
@@ -17,7 +17,8 @@
                     </button>
                 </div>
             </div>
-            <p class="help is-danger">This email is invalid</p>
+            
+            {{ elIf('<p class="help is-danger">$self</p>', getErrorFor('title'), hasErrorFor('title')) }}
         </form>
     </div>
 

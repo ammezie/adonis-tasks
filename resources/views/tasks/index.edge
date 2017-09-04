@@ -49,11 +49,16 @@
                             {{ task.title }}
                         </td>
                         <td>
-                            <a class="button is-danger is-outlined">
-                                <span class="icon is-small">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </span>
-                            </a>
+                            <form action="{{ 'tasks/' + task.id + '?_method=DELETE' }}" method="POST">
+                                {{ csrfField() }}
+                                
+                                <button type="submit" class="button is-danger is-outlined">
+                                    <span>DELETE</span>
+                                    <span class="icon is-small">
+                                        <i class="fa fa-times" aria-hidden="true"></i>
+                                    </span>
+                                </button>
+                            </form>
                         </td>
                     </tr>
                 @else

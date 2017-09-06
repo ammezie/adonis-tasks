@@ -1,31 +1,51 @@
-# Adonis fullstack application
+# A simple task list built with AdonisJS
 
-This is the fullstack boilerplate for AdonisJs, it comes pre-configured with.
+## Getting Started
 
-1. Bodyparser
-2. Session
-3. Authentication
-4. Web security middleware
-5. CORS
-6. Edge template engine
-7. Lucid ORM
-8. Migrations and seeds
+Clone the project repository by running the command below if you use SSH
+
+```
+git clone git@github.com:ammezie/adonis-tasks.git
+```
+
+If you use https, use this instead
+
+```
+git clone https://github.com/ammezie/adonis-tasks.git
+```
 
 ## Setup
 
-Use the adonis command to install the blueprint
+Run the command below to install dependencies
 
-```bash
-adonis new yardstick
+```
+npm install
 ```
 
-or manually clone the repo and then run `npm install`.
-
+Duplicate `.env.example` and rename it `.env`
 
 ### Migrations
 
-Run the following command to run startup migrations.
+Setup your database and enter the following in `.env`
 
-```js
+```
+DB_CONNECTION=mysql
+DB_HOST=localhost
+DB_DATABASE=adonis-tasks
+DB_USER=root
+DB_PASSWORD=
+```
+
+Run the following command to run migration.
+
+```
 adonis migration:run
 ```
+
+Finally, start the application:
+
+```
+adonis serve --dev
+```
+
+and visit http://127.0.0.1:3333/ to see the application in action.

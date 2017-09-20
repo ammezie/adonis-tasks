@@ -28,7 +28,8 @@
     "@adonisjs/session": "^1.0.10",
     "@adonisjs/shield": "^1.0.2",
     "@adonisjs/validator": "^4.0.3",
-    "mysql": "^2.14.1"
+    "mysql": "^2.14.1",
+    "url": "^0.11.0"
   },
   "devDependencies": {
     "standard": "^10.0.3"

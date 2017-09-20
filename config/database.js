@@ -2,7 +2,7 @@
 
 const Env = use('Env')
 const Helpers = use('Helpers')
-const { Url } = require('url')
+const Url = require('url-parse')
 
 const CLEARDB_DATABASE_URL = new Url(Env.get('CLEARDB_DATABASE_URL'))
 
@@ -50,11 +50,11 @@ module.exports = {
   mysql: {
     client: 'mysql',
     connection: {
-      host: CLEARDB_DATABASE_URL.host,
-      // port: Env.get('DB_PORT', ''),
-      user: CLEARDB_DATABASE_URL.username,
-      password: CLEARDB_DATABASE_URL.password,
-      database: CLEARDB_DATABASE_URL.pathname
+      host: Env.get('DB_HOST', CLEARDB_DATABASE_URL.host),
+      port: Env.get('DB_PORT', ''),
+      user: Env.get('DB_USER', CLEARDB_DATABASE_URL.username),
+      password: Env.get('DB_PASSWORD', CLEARDB_DATABASE_URL.password),
+      database: Env.get('DB_DATABASE', CLEARDB_DATABASE_URL.pathname.substr(1))
     }
   },
 

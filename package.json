@@ -29,7 +29,7 @@
     "@adonisjs/shield": "^1.0.2",
     "@adonisjs/validator": "^4.0.3",
     "mysql": "^2.14.1",
-    "url": "^0.11.0"
+    "url-parse": "^1.1.9"
   },
   "devDependencies": {
     "standard": "^10.0.3"

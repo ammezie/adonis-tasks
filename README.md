@@ -22,7 +22,22 @@ Run the command below to install dependencies
 npm install
 ```
 
+
+### Browser download
+
+Since this repo relies on [puppeteer](https://github.com/GoogleChrome/puppeteer) for running tests, it requires a bundled `Chromium` version.
+
+The installation of **Chromium** may take a while and optionally you can skip it by running following command.
+
+```
+PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true npm install
+```
+
+
+### Environment variables
+
 Duplicate `.env.example` and rename it `.env`
+
 
 ### Migrations
 

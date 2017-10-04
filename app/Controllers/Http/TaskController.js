@@ -4,7 +4,6 @@ const Task = use('App/Models/Task')
 const { validate } = use('Validator')
 
 class TaskController {
-    
     async index ({ view }) {
         const tasks = await Task.all()
 
@@ -24,7 +23,7 @@ class TaskController {
 
             return response.redirect('back')
         }
-        
+
         // persist to database
         const task = new Task()
         task.title = request.input('title')
@@ -42,7 +41,7 @@ class TaskController {
 
         // Fash success message to session
         session.flash({ notification: 'Task deleted!' })
-        
+
         return response.redirect('back')
     }
 }
